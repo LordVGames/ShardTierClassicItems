@@ -18,6 +18,7 @@ namespace ShardTierClassicItems
         internal static Color CurioColor;
         internal static TradeController tradeController = null;
         internal static List<string> ValidTradeNames = [];
+        internal static List<ItemIndex> CurioItemIndexesList = [];
 
         internal static void SetupTradeController()
         {
@@ -52,6 +53,12 @@ namespace ShardTierClassicItems
                 if (itemTierChangeConfigEntry.Value)
                 {
                     MakeItemDefCurioTier(itemDef, itemTierChangeConfigEntry);
+                    if (IsItemAncientScepter(itemDef.nameToken))
+                    {
+                        Harmony harmony = new(Plugin.PluginGUID);
+                        harmony.CreateClassProcessor(typeof(ModSupport.AncientScepterMod.HarmonyPatches)).Patch();
+                        ModSupport.AncientScepterMod.OverrideScepterDescriptionTokenIfApplicable();
+                    }
                 }
             }
         }
@@ -93,6 +100,22 @@ namespace ShardTierClassicItems
 
 
 
+        internal static void FillCurioItemIndexesList()
+        {
+            foreach (ItemDef itemDef in RoR2.ContentManagement.ContentManager.itemDefs)
+            {
+                if (itemDef._itemTierDef != SS2Content.ItemTierDefs.Curio)
+                {
+                    continue;
+                }
+                if (itemDef.name.Contains("SHARD") || IsItemAncientScepter(itemDef.name))
+                {
+                    continue;
+                }
+
+                CurioItemIndexesList.Add(itemDef.itemIndex);
+            }
+        }
 
         internal static TradeDef.TradeOption CreateTradeOptionFromItemDef(ItemDef itemDef)
         {
@@ -147,7 +170,12 @@ namespace ShardTierClassicItems
 
         internal static bool IsItemDefNormalClassicItem(string nameToken)
         {
-            return (nameToken.StartsWith("CLASSICITEMSRETURNS") || nameToken == "ITEM_ANCIENT_SCEPTER_NAME") && !nameToken.Contains("DRONEITEM");
+            return (nameToken.StartsWith("CLASSICITEMSRETURNS") || IsItemAncientScepter(nameToken)) && !nameToken.Contains("DRONEITEM");
+        }
+
+        internal static bool IsItemAncientScepter(string nameToken)
+        {
+            return nameToken == "ITEM_ANCIENT_SCEPTER_NAME";
         }
     }
 }

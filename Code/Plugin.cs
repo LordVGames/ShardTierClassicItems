@@ -1,5 +1,7 @@
 using BepInEx;
 using BepInEx.Configuration;
+using HarmonyLib;
+using MiscFixes.Modules;
 using RoR2;
 
 [assembly: HG.Reflection.SearchableAttribute.OptIn]
@@ -15,7 +17,7 @@ namespace ShardTierClassicItems
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginAuthor = "LordVGames";
         public const string PluginName = "ShardTierClassicItems";
-        public const string PluginVersion = "1.0.0";
+        public const string PluginVersion = "1.1.0";
         public void Awake()
         {
             PluginInfo = Info;
@@ -38,12 +40,15 @@ namespace ShardTierClassicItems
                 Guh(Config);
             };
         }
-        private static void Guh(ConfigFile Config)
+
+        private static void Guh(ConfigFile config)
         {
             Main.CurioColor = ColorCatalog.GetColor(SS2.SS2Content.ItemTierDefs.Curio.colorIndex);
             Main.SetupTradeController();
-            ConfigOptions.BindConfigOptions(Config);
+            ConfigOptions.BindConfigOptions(config);
+            config.WipeConfig();
             Main.EditClassicItems();
+            Main.FillCurioItemIndexesList();
         }
     }
 }
