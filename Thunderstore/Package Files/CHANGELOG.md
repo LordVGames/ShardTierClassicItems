@@ -1,3 +1,8 @@
+## 1.2.0
+
+- Added recolored outline assets for guardian's heart from ClassicItemsReturns
+- Fixed mod preventing the game from loading due to the apostrophe in the "guardian's heart" name
+
 ## 1.1.0
 
 - Added assets with proper recolored outlines for mortar tube from ClassicItemsReturns

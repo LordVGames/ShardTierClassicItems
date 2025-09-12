@@ -148,7 +148,7 @@ namespace ShardTierClassicItems
         {
             foreach (var configEntry in ConfigOptions.TradesConfigEntriesList)
             {
-                if (configEntry.Definition.Key == Language.GetString(itemDef.nameToken, "en"))
+                if (configEntry.Definition.Key == Language.GetString(itemDef.nameToken, "en").Replace("'", ""))
                 {
                     return configEntry;
                 }
@@ -160,7 +160,7 @@ namespace ShardTierClassicItems
         {
             foreach (var configEntry in ConfigOptions.TierChangeConfigEntriesList)
             {
-                if (configEntry.Definition.Key == Language.GetString(itemDef.nameToken, "en"))
+                if (configEntry.Definition.Key == Language.GetString(itemDef.nameToken, "en").Replace("'", ""))
                 {
                     return configEntry;
                 }

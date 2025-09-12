@@ -1,6 +1,6 @@
 ﻿{
 	"name": "ShardTierClassicItems",
-	"version_number": "1.1.0",
+	"version_number": "1.2.0",
 	"website_url": "https://github.com/LordVGames/ShardTierClassicItems",
 	"description": "DEPENDENCIES NOT INSTALLED BY DEFAULT!!! Changes items from ClassicItemsReturns & StandaloneAncientScepter to a new item tier in the Starstorm 2 beta & adds them to the related trading system.",
 	"dependencies": [

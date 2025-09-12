@@ -47,7 +47,7 @@ namespace ShardTierClassicItems
                 {
                     continue;
                 }
-                string englishItemName = Language.GetString(itemDef.nameToken, "en");
+                string englishItemName = Language.GetString(itemDef.nameToken, "en").Replace("'", "");
 
                 // changing the language would cause the config to use a differently named set of options
                 // so let's stick to english item names to prevent that
