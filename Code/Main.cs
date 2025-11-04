@@ -22,11 +22,16 @@ namespace ShardTierClassicItems
 
         internal static void SetupTradeController()
         {
-            GameObject tradeTele = SS2Assets.LoadAsset<GameObject>("TradeTeleporter", SS2Bundle.Interactables);
+            GameObject tradeTele = SS2Assets.FindAsset<GameObject>("TradeTeleporter");
             tradeController = tradeTele.GetComponent<TradeController>();
-            Log.Info("ALl valid trades:");
+            Log.Info("All valid trades:");
             foreach (TradeDef tradeDef in tradeController.trades)
             {
+                if (tradeDef == null || tradeDef.desiredItem == null)
+                {
+                    continue;
+                }
+
                 Log.Info($"{tradeDef.name} (requires {tradeDef.desiredItem.name})");
                 ValidTradeNames.Add(tradeDef.name);
             }

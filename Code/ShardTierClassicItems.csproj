@@ -11,29 +11,28 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.3">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		
+		<PackageReference Include="amogus_lovers-StandaloneAncientScepter" Version="1.1.34" Publicize="true" />
 
 		<PackageReference Include="BepInEx.Core" Version="5.4.21" />
 
 		<PackageReference Include="R2API.Language" Version="1.0.1" />
 
+		<PackageReference Include="Risky_Sleeps-ClassicItemsReturns" Version="3.6.4" Publicize="true" />
+
+		<PackageReference Include="score-MiscFixes" Version="1.5.0" />
+
+		<PackageReference Include="TeamMoonstorm-MoonstormSharedUtils" Version="2.3.2" />
+
+		<PackageReference Include="TeamMoonstorm-Starstorm2" Version="0.6.25" Publicize="true" />
+
 		<PackageReference Include="UnityEngine.Modules" Version="2021.3.33" IncludeAssets="compile" />
 		<PackageReference Include="RiskOfRain2.GameLibs" Version="1.3.9-r.0" />
 		<PackageReference Include="MMHOOK.RoR2" Version="2025.6.3" NoWarn="NU1701" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Reference Include="AncientScepter">
-	    <HintPath>..\..\! Assemblies to reference\AncientScepter-nstrip.dll</HintPath>
-	  </Reference>
-	  <Reference Include="ClassicItemsReturns">
-	    <HintPath>..\..\! Assemblies to reference\ClassicItemsReturns.dll</HintPath>
-	  </Reference>
-	  <Reference Include="MiscFixes">
-	    <HintPath>..\..\! Assemblies to reference\MiscFixes.dll</HintPath>
-	  </Reference>
-	  <Reference Include="Starstorm2">
-	    <HintPath>..\..\! Assemblies to reference\Starstorm2 - BETA.dll</HintPath>
-	  </Reference>
 	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">

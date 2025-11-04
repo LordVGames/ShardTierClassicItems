@@ -3,6 +3,8 @@ using BepInEx.Configuration;
 using HarmonyLib;
 using MiscFixes.Modules;
 using RoR2;
+using SS2;
+using MSU;
 
 [assembly: HG.Reflection.SearchableAttribute.OptIn]
 namespace ShardTierClassicItems
@@ -17,7 +19,7 @@ namespace ShardTierClassicItems
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginAuthor = "LordVGames";
         public const string PluginName = "ShardTierClassicItems";
-        public const string PluginVersion = "1.2.0";
+        public const string PluginVersion = "1.2.1";
         public void Awake()
         {
             PluginInfo = Info;
@@ -43,7 +45,13 @@ namespace ShardTierClassicItems
 
         private static void Guh(ConfigFile config)
         {
-            Main.CurioColor = ColorCatalog.GetColor(SS2.SS2Content.ItemTierDefs.Curio.colorIndex);
+            if (!SS2Config.enableBeta.value)
+            {
+                Log.Warning("This mod will not run due to required Starstorm 2 beta content not being enabled. Enable the 0.7 beta to use this mod.");
+                return;
+            }
+
+            Main.CurioColor = ColorCatalog.GetColor(SS2Content.ItemTierDefs.Curio.colorIndex);
             Main.SetupTradeController();
             ConfigOptions.BindConfigOptions(config);
             config.WipeConfig();

@@ -1,10 +1,6 @@
-# **THE STARSTORM 2 BETA DOES NOT COME INSTALLED WITH THIS MOD!**
+## **[ClassicItemsReturns](https://thunderstore.io/package/Risky_Sleeps/ClassicItemsReturns/) AND [StandaloneAncientScepter](https://thunderstore.io/package/amogus_lovers/StandaloneAncientScepter/) ARE NOT INSTALLED BY DEFAULT**
 
-**Go to their [discord server](https://discord.com/invite/SgFxwKT7nY) to find instructions on how to install it. Do not try to use the version of Starstorm 2 on thunderstore with this mod as IT WILL NOT WORK, and it will error out and prevent your game from loading!**
-
-## **[ClassicItemsReturns](https://thunderstore.io/package/Risky_Sleeps/ClassicItemsReturns/) AND [StandaloneAncientScepter](https://thunderstore.io/package/amogus_lovers/StandaloneAncientScepter/) ALSO DON'T AUTO INSTALL**
-
-**This mod affects content from both, but it's been setup in a way so that you can use one or the other, or both. Because of that, neither are automatically downloaded for you when downloading this mod!**
+**This mod affects content from both, but it's been setup in a way so that you can use one or the other, or both. Because of that, neither are automatically downloaded for you when downloading this mod.**
 
 <br></br>
 <br></br>

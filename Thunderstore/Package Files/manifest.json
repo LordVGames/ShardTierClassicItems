@@ -1,11 +1,12 @@
 ﻿{
 	"name": "ShardTierClassicItems",
-	"version_number": "1.2.0",
+	"version_number": "1.2.1",
 	"website_url": "https://github.com/LordVGames/ShardTierClassicItems",
-	"description": "DEPENDENCIES NOT INSTALLED BY DEFAULT!!! Changes items from ClassicItemsReturns & StandaloneAncientScepter to a new item tier in the Starstorm 2 beta & adds them to the related trading system.",
+	"description": "Changes items from ClassicItemsReturns & StandaloneAncientScepter to a new item tier in the Starstorm 2 beta & adds them to the related trading system.",
 	"dependencies": [
 		"bbepis-BepInExPack-5.4.2117",
 		"RiskofThunder-HookGenPatcher-1.2.5",
-		"RiskofThunder-R2API_Language-1.0.1"
+		"RiskofThunder-R2API_Language-1.0.1",
+		"TeamMoonstorm-Starstorm2-0.6.25"
 	]
 }

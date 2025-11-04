@@ -1,3 +1,7 @@
+## 1.2.1
+
+- Fixed for SS2 0.6.25
+
 ## 1.2.0
 
 - Added recolored outline assets for guardian's heart from ClassicItemsReturns
